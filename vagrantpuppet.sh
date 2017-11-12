@@ -1,7 +1,7 @@
 sudo apt-get update
 sudo apt-get -y install puppet
-echo "192.168.43.147 master" |sudo tee --append /etc/hosts
+echo "192.168.1.40 master.local" |sudo tee --append /etc/hosts
 echo "[agent]"|sudo tee --append /etc/puppet/puppet.conf
-echo "server = master"|sudo tee --append /etc/puppet/puppet.conf
+echo "server = master.local"|sudo tee --append /etc/puppet/puppet.conf
 sudo puppet agent --enable
 sudo service puppet restart
